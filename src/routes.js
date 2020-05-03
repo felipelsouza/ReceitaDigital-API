@@ -8,5 +8,6 @@ routes.get('/medicamentos', MedicamentosController.index)
 
 routes.get('/receitas', ReceitasController.index)
 routes.post('/receitas', ReceitasController.store)
+routes.delete('/receitas', ReceitasController.delete)
 
 module.exports = routes
