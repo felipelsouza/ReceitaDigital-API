@@ -4,6 +4,7 @@ module.exports = {
     username: 'alek',
     password: 'Cthulhu2209',
     database: 'receita_digital',
+    connectTimeout: 30000,
     define: {
         timestamps: false
     }
