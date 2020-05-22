@@ -8,5 +8,5 @@ const app = express()
 app.use(express.json())
 app.use(routes)
 
-app.listen(3333)
-//app.listen(80, '198.50.130.238')
+app.listen(8080)
+// app.listen(8080, '198.50.130.238')

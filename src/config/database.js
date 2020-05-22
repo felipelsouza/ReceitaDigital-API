@@ -4,6 +4,7 @@ module.exports = {
     username: 'alek',
     password: 'Cthulhu2209',
     database: 'receita_digital',
+    socketPath: '/var/run/mysqld/mysqld.sock',
     connectTimeout: 30000,
     define: {
         timestamps: false
