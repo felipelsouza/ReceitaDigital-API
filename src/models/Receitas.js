@@ -5,6 +5,7 @@ class receitas extends Model {
         super.init({
             NOME_PACIENTE_RECEITA: DataTypes.STRING,
             CPF_PACIENTE_RECEITA: DataTypes.STRING,
+            CPF_MEDICO: DataTypes.STRING,
             CARTAO_SUS_PACIENTE: DataTypes.INTEGER,
             MEDICAMENTO_RECEITA: DataTypes.STRING,
             DOSAGEM: DataTypes.STRING,

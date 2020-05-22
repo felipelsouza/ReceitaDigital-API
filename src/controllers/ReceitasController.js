@@ -8,6 +8,7 @@ module.exports = {
     async store(req, res) {
         const { NOME_PACIENTE_RECEITA,
             CPF_PACIENTE_RECEITA,
+            CPF_MEDICO,
             CARTAO_SUS_PACIENTE,
             MEDICAMENTO_RECEITA,
             DOSAGEM,
@@ -18,6 +19,7 @@ module.exports = {
         const receitas = await Receitas.create({
             NOME_PACIENTE_RECEITA,
             CPF_PACIENTE_RECEITA,
+            CPF_MEDICO,
             CARTAO_SUS_PACIENTE,
             MEDICAMENTO_RECEITA,
             DOSAGEM,
@@ -31,6 +33,7 @@ module.exports = {
     async delete(req, res) {
         const { NOME_PACIENTE_RECEITA,
             CPF_PACIENTE_RECEITA,
+            CPF_MEDICO,
             CARTAO_SUS_PACIENTE,
             MEDICAMENTO_RECEITA,
             DOSAGEM,
