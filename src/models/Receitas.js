@@ -6,7 +6,7 @@ class receitas extends Model {
             NOME_PACIENTE_RECEITA: DataTypes.STRING,
             CPF_PACIENTE_RECEITA: DataTypes.STRING,
             CPF_MEDICO: DataTypes.STRING,
-            CARTAO_SUS_PACIENTE: DataTypes.INTEGER,
+            CARTAO_SUS_PACIENTE: DataTypes.STRING,
             MEDICAMENTO_RECEITA: DataTypes.STRING,
             DOSAGEM: DataTypes.STRING,
             DATA_RECEITA: DataTypes.DATE,
