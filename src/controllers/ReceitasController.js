@@ -1,11 +1,19 @@
 const Receitas = require('../models/Receitas')
+const Medicos = require('../models/Medicos')
 
 module.exports = {
     async index(req, res) {
-        const receitas = await Receitas.findAll()
-        return res.json(receitas)
+        const { ID_MEDICOS } = req.params
+        const medicos = await Medicos.findByPk(ID_MEDICOS, {
+            include: {
+                association: 'RECEITAS'
+            }
+        })
+
+        return res.json(medicos.RECEITAS)
     },
     async store(req, res) {
+        const { ID_MEDICOS } = req.params;
         const { NOME_PACIENTE_RECEITA,
             CPF_PACIENTE_RECEITA,
             CPF_MEDICO,
@@ -16,6 +24,12 @@ module.exports = {
             OBS_RECEITA_PACIENTE
         } = req.body
 
+        const medicos = await Medicos.findByPk(ID_MEDICOS)
+
+        if(!medicos) {
+            return res.status(400).json({ error: 'Medico não encontrado'})
+        }
+
         const receitas = await Receitas.create({
             NOME_PACIENTE_RECEITA,
             CPF_PACIENTE_RECEITA,
@@ -24,7 +38,8 @@ module.exports = {
             MEDICAMENTO_RECEITA,
             DOSAGEM,
             DATA_RECEITA,
-            OBS_RECEITA_PACIENTE
+            OBS_RECEITA_PACIENTE,
+            ID_MEDICOS
         })
 
         return res.json(receitas)

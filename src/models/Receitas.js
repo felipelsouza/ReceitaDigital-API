@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize')
 
-class receitas extends Model {
-    static init(sequelize){
+class Receitas extends Model {
+    static init(sequelize) {
         super.init({
             NOME_PACIENTE_RECEITA: DataTypes.STRING,
             CPF_PACIENTE_RECEITA: DataTypes.STRING,
@@ -14,8 +14,11 @@ class receitas extends Model {
         }, {
             sequelize
         })
-        receitas.removeAttribute('id')
+        //receitas.removeAttribute('id')
+    }
+    static associate(models) {
+        this.belongsTo(models.Medicos, { foreignKey: 'ID_MEDICOS', as: 'MEDICO' })
     }
 }
 
-module.exports = receitas
+module.exports = Receitas
