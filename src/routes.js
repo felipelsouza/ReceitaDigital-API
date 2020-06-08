@@ -5,11 +5,11 @@ const MedicosController = require('./controllers/MedicosController')
 
 const routes = express.Router()
 
-routes.get('/medicos', MedicamentosController.index)
+routes.get('/medicos', MedicosController.index)
 routes.get('/medicamentos', MedicamentosController.index)
 
-routes.get('/medicos/:ID_MEDICOS/receitas', ReceitasController.index)
-routes.post('/medicos/:ID_MEDICOS/receitas', ReceitasController.store)
+routes.get('/medicos/:CPF_MEDICO/receitas', ReceitasController.index)
+routes.post('/medicos/:CPF_MEDICO/receitas', ReceitasController.store)
 routes.delete('/receitas', ReceitasController.delete)
 
 module.exports = routes

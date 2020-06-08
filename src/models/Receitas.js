@@ -17,7 +17,7 @@ class Receitas extends Model {
         //receitas.removeAttribute('id')
     }
     static associate(models) {
-        this.belongsTo(models.Medicos, { foreignKey: 'ID_MEDICOS', as: 'MEDICO' })
+        this.belongsTo(models.Medicos, { foreignKey: 'CPF_MEDICO', as: 'MEDICO' })
     }
 }
 

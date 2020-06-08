@@ -5,14 +5,15 @@ class Medicos extends Model {
         super.init({
             NOME_MEDICO: DataTypes.STRING,
             CRM_MEDICO: DataTypes.STRING,
-            CPF_MEDICO: DataTypes.STRING
+            CPF_MEDICO: DataTypes.STRING,
+            UF_MEDICO: DataTypes.STRING
         }, {
             sequelize
         })
     }
 
     static associate(models) {
-        this.hasMany(models.Receitas, { foreignKey: 'ID_MEDICOS', as: 'RECEITAS'})
+        this.hasMany(models.Receitas, { foreignKey: 'CPF_MEDICO', as: 'RECEITAS'})
     }
 }
 
