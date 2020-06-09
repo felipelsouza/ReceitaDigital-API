@@ -16,4 +16,8 @@ Users.init(connection)
 Medicos.associate(connection.models)
 Receitas.associate(connection.models)
 
-module.exports= connection
+Medicos.associate(connection.models)
+Receitas.associate(connection.models)
+
+
+module.exports = connection
